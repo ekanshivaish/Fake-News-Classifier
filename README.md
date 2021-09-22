@@ -1,1 +1,1 @@
-# nlp-fake-news-clf-heroku-deployment
+# NlpFakeNewsClassifier

@@ -11,8 +11,8 @@ from sklearn.feature_extraction.text import CountVectorizer
 lm = WordNetLemmatizer()
 sw = stopwords.words('english')
 
-model = pd.read_pickle(r'C:\Users\HP\PycharmProjects\pythonProject\final_model_02082021.pkl')
-vect = pd.read_pickle(r'C:\Users\HP\PycharmProjects\pythonProject\cv_vec_02082021.pkl')
+model = pd.read_pickle(r'C:\Users\HP\PycharmProjects\pythonProject\final_model.pickle')
+vect = pd.read_pickle(r'C:\Users\HP\PycharmProjects\pythonProject\vec_new.pickle')
 
 
 def clean_data(value):
@@ -36,11 +36,11 @@ cv = CountVectorizer()
 
 def predict(a):
     cd = clean_data(a)
-    print(cd)
-    # cd = vect.transform(cd)
-    # print(cd)
-    # prediction = model.predict(cd)
-    return "prediction"
+    print(cd)     #  to check output of clean_data function
+    data = vect.transform([cd])
+    print(data)   #  #  to check output of clean_data function
+    prediction = model.predict(cd)
+    return prediction
 
 
 def main():
